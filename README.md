@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# CIC Fridays React Course
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The goal of this course is to learn more about [React](https://reactjs.org/), a JavaScript library for building user interfaces.
 
-## Available Scripts
+## Format
 
-In the project directory, you can run:
+For 3 Fridays, we will cover a selection of core concepts. We will have a brief theoretical introduction and follow it up with hands on exercises.
 
-### `yarn start`
+## Initialize the project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clone this repo in your directory of choice on your computer: `git clone https://github.com/pgzisis/cic-fridays-react-course.git`.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Open the `cic-fridays-react-course` folder with your code editor.
 
-### `yarn test`
+In the project's root folder open a terminal:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Install the project's dependencies: `npm install`
 
-### `yarn build`
+Run the development server: `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A new tab should open in your browser pointing to [http://localhost:3000/](http://localhost:3000/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Now, whenever you make changes on an exercise and save them, they should automatically be reflected on the browser!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Going to exercises
 
-### `yarn eject`
+To go to the exercises, you have to switch to the relevant git branch.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For example, If I wanted to visit the components exercises, I would have to: `git checkout components`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Notice that if you have made changes in a branch and you switch to another one, your changes will carry over to the new branch. To avoid this:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Stage your changes: `git add --all`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Commit them: `git commit -m "Replace this example commit message"`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You are ready to checkout another exercise branch!
