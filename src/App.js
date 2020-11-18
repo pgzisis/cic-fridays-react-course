@@ -1,36 +1,26 @@
-// Let's create our first Components! We would like to render on the browser a
-// hello world message and a small introduction of ourselves!
+// Let's do some conditional rendering! In this exercise we will render either a
+// square or a circle depending on a variable called `shape`. To start, head to
+// Square.js file!
 
-// Our App component should return 2 Components! One called Hello, and one
-// called Intro. Go to the Hello.js file to get started!
+// Now that we are done with the shapes, let's wrap this up! Replace the return
+// statement with a regular if statement. If `shape` is equal to 'square' then
+// we should return the Square component, otherwise, we should return the Circle
+// component.
 
-// We finished creating our Components, now let's see them in action! First, we
-// have to import them. If I wanted to import a Component named Station, I would
-// use the name of the Component and then the file it comes from:
-// import { Station } from './Station';
+// Don't forget the isGreen and isRed boolean props on the Square and Circle
+// components respectively!
 
-// To use a Component named Station inside the App Component, I would do it like
-// this:
-
-/*
-const App = () => {
-  return (
-    <div className="container">
-      <Station />
-    </>
-  );
-};
-*/
-
-// Notice that we are using the keyword className to specify our css class! The
-// word class is a reserved JavaScript keyword and don't forget we are writing
-// JavaScript with JSX after all!
-
-// Put Hello and Intro inside the div! Congratulations you created your
-// first React Components!
+import { Square } from './Square';
+import { Circle } from './Circle';
 
 const App = () => {
-  return <div className="container"></div>;
+  const shape = 'square';
+
+  return <div></div>;
 };
 
 export default App;
+
+// When you are done adding the components, try flipping the values on the
+// components` props, as well as on the `shape` variable. You should see changes
+// in colors and shapes! Congratulations on learning Conditional Rendering!

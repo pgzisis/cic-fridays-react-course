@@ -8,11 +8,11 @@ Consider these 2 components:
 
 ```
 const MorningGreeting = () => {
-  return <h1>Good Morning!</h1>
+  return <h1>Good Morning!</h1>;
 }
 
 const EveningGreeting = () => {
-  return <h1>Good Evening!</h1>
+  return <h1>Good Evening!</h1>;
 }
 ```
 
@@ -21,14 +21,14 @@ We'll create a Greeting component that displays either of these components depen
 ```
 const Greeting = (props) => {
   if (props.isMorning) {
-    return <MorningGreeting />
+    return <MorningGreeting />;
   }
 
-  return <EveningGreeting />
+  return <EveningGreeting />;
 }
 
 const App = () => {
-  return <Greeting isMorning={false} />
+  return <Greeting isMorning={false} />;
 }
 ```
 
@@ -55,7 +55,7 @@ const Mailbox = (props) => {
 const App = () => {
   const messages = ['Message1', 'Message2', 'Message3'];
 
-  return <Mailbox unreadMessages={messages}>
+  return <Mailbox unreadMessages={messages}>;
 }
 ```
 
@@ -73,7 +73,7 @@ In the example below, we use it to conditionally render a small block of text:
 
 ```
 const Ball = (props) => {
-  return <h1>This ball is {props.isRed ? 'red' : 'white'}</h1>
+  return <h1>This ball is {props.isRed ? 'red' : 'white'}</h1>;
 }
 ```
 
