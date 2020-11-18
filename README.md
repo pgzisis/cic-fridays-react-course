@@ -23,7 +23,7 @@ const Welcome = (props) => {
 To use them in another component:
 
 ```
-const App = (props) => {
+const App = () => {
   return <Welcome name="Panos" />
 }
 ```
