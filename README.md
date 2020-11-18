@@ -1,26 +1,38 @@
-# CIC Fridays React Course
+# Components
 
-The goal of this course is to learn more about [React](https://reactjs.org/), a JavaScript library for building user interfaces.
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
 
-## Format
+Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
 
-For 3 Fridays, we will cover a selection of core concepts. We will have a brief theoretical introduction and follow it up with hands on exercises.
+Components come in two flavors, function and class components. In this course we will only cover function components. They are more powerful and as a result the popular choice.
 
-## Initialize the project
+The simplest way to define a component is to write a JavaScript function:
 
-Clone this repo in your directory of choice on your computer: `git clone https://github.com/pgzisis/cic-fridays-react-course.git`.
+```
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+OR
+```
+const Welcome = (props) => {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
 
-Open the `cic-fridays-react-course` folder with your code editor.
+To use them in another component:
 
-In the project's root folder open a terminal:
+```
+const App = (props) => {
+  return <Welcome name="Panos" />
+}
+```
 
-Install the project's dependencies: `npm install`
+Go to the `App.js` file for exercise instructions!
 
-Run the development server: `npm start`
+When you are done, don't forget to commit your changes!
 
-A new tab should open in your browser pointing to [http://localhost:3000/](http://localhost:3000/)
-
-Now, whenever you make changes on an exercise and save them, they should automatically be reflected on the browser!
+You can continue to the next exercise with: `git checkout props`
 
 ## Going to exercises
 
