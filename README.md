@@ -1,30 +1,22 @@
-# Components
+# Props
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+“Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another. But the important part here is that data with props are being passed in a uni-directional flow.  
+(one way from parent to child)
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+React is pretty flexible but it has a single strict rule:
 
-Components come in two flavors, function and class components. In this course we will only cover function components. They are more powerful and as a result the popular choice.
+All React components must act like pure functions with respect to their props.
 
-The simplest way to define a component is to write a JavaScript function:
-
+Example of a component passing a prop to another component:
 ```
-function Welcome(props) {
-  return <h1>Hello, {props.name}</h1>;
+const Welcome = () => {
+  return <Name name="John Doe" />;
 }
 ```
 OR
 ```
-const Welcome = (props) => {
-  return <h1>Hello, {props.name}</h1>;
-}
-```
-
-To use them in another component:
-
-```
-const App = () => {
-  return <Welcome name="Panos" />
+const Name = (props) => {
+  return <h1>{props.name}</h1>;
 }
 ```
 
@@ -32,7 +24,7 @@ Go to the `App.js` file for exercise instructions!
 
 When you are done, don't forget to commit your changes!
 
-You can continue to the next exercise with: `git checkout props`
+You can continue to the next exercise with: `git checkout conditional-rendering`
 
 ## Going to exercises
 

@@ -1,6 +1,13 @@
-// In this Component we would like to return a <h1>Hello World!<h1> When you are
-// done, go to the Intro.js file to continue!
+// Here in this component first we should pass the props object in the required parameters. See the README example.
 
-// Don't forget to export it too! Otherwise it won't be available to the rest of
-// the application! For example if I wanted to export a Component named Scores:
-// export { Scores };
+// After doing so we just have to replace the *Today* with the "currentDay" field of our props object.
+
+// In React You can pass a javascript variable inside a jsx tag simply by wrapping it in {}
+
+import React from 'react';
+
+const Hello = () => {
+    return <h1>Hello World! *Today* is a lovely day to learn React</h1>;
+};
+
+export default Hello;
