@@ -3,7 +3,7 @@
 // In the Intro Component we want to pass a prop named "name" which will contain a string value with our name
 // Go to the Intro Component to get started
 
-// In the Hello Component we want to pass a prop named "currentTime" which will contain a string value with the current time
+// In the Hello Component we want to pass a prop named "currentDay" which will contain a string value with the current day
 // Go to the Hello Component to get started
 
 // Now both of our new components are expecting a prop to be passed to each and after doing so they will be rendered in each view.
