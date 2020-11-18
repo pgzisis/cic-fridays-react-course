@@ -4,11 +4,10 @@
 
 // In React You can pass a javascript variable inside a jsx tag simply by wrapping it in {}
 
-import React from 'react';
-
 const Intro = () => {
-    return <p>My name is *Your name* and I am learning React!</p>;
+  return <p>My name is *Your name* and I am learning React!</p>;
 };
 
-export default Intro;
+export { Intro };
 
+// When you are finished go back to the App.js file

@@ -16,15 +16,16 @@
 // We will have to use our javascript knowledge. We can create a new variable which calculates the current time and pass that to the Hello component
 // Or we can pass directly the implementation of the calculation of the current day. *Hint: Use new Date().toDateString()
 
-import Hello from './Hello';
-import Intro from './Intro';
-import React from 'react';
+import { Hello } from './Hello';
+import { Intro } from './Intro';
 
 const App = () => {
-  return <div className="container">
-        <Hello />
-        <Intro />
-  </div>;
+  return (
+    <div className="container">
+      <Hello />
+      <Intro />
+    </div>
+  );
 };
 
 export default App;

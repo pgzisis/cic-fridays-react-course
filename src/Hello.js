@@ -7,7 +7,9 @@
 import React from 'react';
 
 const Hello = () => {
-    return <h1>Hello World! *Today* is a lovely day to learn React</h1>;
+  return <h1>Hello World! *Today* is a lovely day to learn React</h1>;
 };
 
-export default Hello;
+export { Hello };
+
+// When you are finished go to the Intro.js file
