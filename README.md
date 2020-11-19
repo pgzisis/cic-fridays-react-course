@@ -1,26 +1,30 @@
-# CIC Fridays React Course
+# Props
 
-The goal of this course is to learn more about [React](https://reactjs.org/), a JavaScript library for building user interfaces.
+“Props” is a special keyword in React, which stands for properties and is being used for passing data from one component to another. But the important part here is that data with props are being passed in a uni-directional flow.  
+(one way from parent to child)
 
-## Format
+React is pretty flexible but it has a single strict rule:
 
-For 3 Fridays, we will cover a selection of core concepts. We will have a brief theoretical introduction and follow it up with hands on exercises.
+All React components must act like pure functions with respect to their props.
 
-## Initialize the project
+Example of a component passing a prop to another component:
+```
+const Welcome = () => {
+  return <Name name="John Doe" />;
+}
+```
+OR
+```
+const Name = (props) => {
+  return <h1>{props.name}</h1>;
+}
+```
 
-Clone this repo in your directory of choice on your computer: `git clone https://github.com/pgzisis/cic-fridays-react-course.git`.
+Go to the `App.js` file for exercise instructions!
 
-Open the `cic-fridays-react-course` folder with your code editor.
+When you are done, don't forget to commit your changes!
 
-In the project's root folder open a terminal:
-
-Install the project's dependencies: `npm install`
-
-Run the development server: `npm start`
-
-A new tab should open in your browser pointing to [http://localhost:3000/](http://localhost:3000/)
-
-Now, whenever you make changes on an exercise and save them, they should automatically be reflected on the browser!
+You can continue to the next exercise with: `git checkout conditional-rendering`
 
 ## Going to exercises
 
@@ -35,3 +39,9 @@ Stage your changes: `git add --all`
 Commit them: `git commit -m "Replace this example commit message"`
 
 You are ready to checkout another exercise branch!
+
+## Exercise branches (ordered)
+
+1. `components`
+2. `props`
+3. `conditional-rendering`
