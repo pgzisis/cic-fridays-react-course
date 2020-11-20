@@ -11,28 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-div {
-  height: 200px;
-  width: 200px;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.circle {
-  border-radius: 50%;
-}
-
-.red {
-  background-color: red;
-}
-
-.purple {
-  background-color: purple;
-}
