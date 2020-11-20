@@ -1,67 +1,48 @@
-# Handling Events
+# State
 
-Hanlding events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+State is similar to props, but it is private and fully controlled by the component.
 
-* React events are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+State was not always available for function components. It was added with [Hooks](https://reactjs.org/docs/hooks-intro.html).
 
-For example, the HTML:
+Hooks are functions that let you “hook into” React state and lifecycle features from function components.
 
-```
-<button onclick="activateLasers()">
-  Activate Lasers
-</button>
-```
-
-is slightly different in React:
+## State Hook
 
 ```
-<button onClick={activateLasers}>
-  Activate Lasers
-</button>
-```
+import { useState } from 'react';
 
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
-
-```
-<a href="#" onclick="console.log('The link was clicked.'); return false">
-  Click me
-</a>
-```
-
-in React, this could instead be:
-
-```
-const ActionLink = () => {
-  const handleClick = (event) => {
-    event.preventDefault();
-    console.log('The link was clicked.');
-  }
+const Example = () => {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
 
   return (
-    <a href="#" onClick={handleClick}>
-      Click me
-    </a>
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
   );
 }
-
 ```
 
-Here, `event` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don’t need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [SyntheticEvent](https://reactjs.org/docs/events.html) reference guide to learn more.
+Here, `useState` is a Hook. We call it inside a function component to add some local state to it. React will preserve this state between re-renders. `useState` returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else.
 
-When you define a component, a common pattern is for an event handler to be a method within the component. For example, this `Alert` component renders a button which whenever is clicked, an alert is shown on the screen:
+The only argument to `useState` is the initial state. In the example above, it is `0` because our counter starts from zero.
+
+When state changes, a re-render of the component and its children occurs, just like props!
+
+## Declaring multiple state variables
+
+You can use the State Hook more than once in a single component:
 
 ```
-const Alert = () => {
-  const handleClick = () => {
-    alert('The button was clicked!');
-  }
-
-  return (
-    <button onClick={handleClick}>
-      Show Alert
-    </button>
-  )
+const ExampleWithManyStates = () => {
+  // Declare multiple state variables!
+  const [age, setAge] = useState(42);
+  const [fruit, setFruit] = useState('banana');
+  const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
+  // ...
 }
 ```
 
@@ -69,7 +50,7 @@ Go to the `App.js` file for exercise instructions!
 
 When you are done, don't forget to commit your changes!
 
-You can continue to the next exercise with: `git checkout state`
+You can continue to the next exercise with: `git checkout lifting-state-up`
 
 ## Going to exercises
 
