@@ -39,9 +39,3 @@ Stage your changes: `git add --all`
 Commit them: `git commit -m "Replace this example commit message"`
 
 You are ready to checkout another exercise branch!
-
-## Exercise branches (ordered)
-
-1. `components`
-2. `props`
-3. `conditional-rendering`
