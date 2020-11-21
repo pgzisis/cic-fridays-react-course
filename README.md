@@ -1,56 +1,120 @@
-# State
+# Lifting State Up
 
-State is similar to props, but it is private and fully controlled by the component.
+Often, several components need to reflect the same changing data. The recommended approach is to lift the state up to their closest common ancestor.
 
-State was not always available for function components. It was added with [Hooks](https://reactjs.org/docs/hooks-intro.html).
+In other words, to collect data from multiple children, or to have two child components communicate with each other, you need to declare the shared state in their parent component instead. The parent component can pass the state back down to the children by using props; this keeps the child components in sync with each other and with the parent component.
 
-Hooks are functions that let you “hook into” React state and lifecycle features from function components.
+To demonstrate this we will create a `Display` component. It will contain a `Textarea` component where the user can type in, and a `Paragraph` component where the value of the `Textarea` will be shown.
 
-## State Hook
+To start, we will begin with the `Display` component:
 
 ```
-import { useState } from 'react';
+const Display = () => {
+  return (
+    <div>
+      <Textarea />
+      <Paragraph />
+    </div>
+  );
+};
+```
 
-const Example = () => {
-  // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
+Next the `Textarea` component:
+
+```
+const Textarea = () => {
+  return <textarea />;
+};
+```
+
+And the `Paragraph` component:
+
+```
+const Paragraph = () => {
+  return <p></p>;
+};
+```
+
+In the `Display` component, we will add the shared state, which the `Textarea` and `Paragraph` will sync upon:
+
+```
+const Display = () => {
+  const [text, setText] = useState('');
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <Textarea />
+      <Paragraph />
     </div>
   );
-}
+};
 ```
 
-Here, `useState` is a Hook. We call it inside a function component to add some local state to it. React will preserve this state between re-renders. `useState` returns a pair: the current state value and a function that lets you update it. You can call this function from an event handler or somewhere else.
-
-The only argument to `useState` is the initial state. In the example above, it is `0` because our counter starts from zero.
-
-When state changes, a re-render of the component and its children occurs, just like props!
-
-## Declaring multiple state variables
-
-You can use the State Hook more than once in a single component:
+When a user types in the `Textarea` we want to detect the change, and send the new value to the `Display` component for saving. This can be achieved with props:
 
 ```
-const ExampleWithManyStates = () => {
-  // Declare multiple state variables!
-  const [age, setAge] = useState(42);
-  const [fruit, setFruit] = useState('banana');
-  const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
-  // ...
-}
+const Textarea = (props) => {
+  const handleChange = (event) => {
+    props.onChange(event.target.value);
+  };
+
+  return <textarea onChange={handleChange} />;
+};
 ```
+
+Now the `Display` component has to accept the changes from `Textarea` and save them in it's local state:
+
+```
+onst Display = () => {
+  const [text, setText] = useState('');
+
+  const handleChange = (newTextareaValue) => {
+    setText(newTextareaValue);
+  };
+
+  return (
+    <div>
+      <Textarea onChange={handleChange} />
+      <Paragraph />
+    </div>
+  );
+};
+```
+
+Finally we pass the state of the `Display` component down to the `Paragraph` component with props:
+
+```
+onst Display = () => {
+  const [text, setText] = useState('');
+
+  const handleChange = (newTextareaValue) => {
+    setText(newTextareaValue);
+  };
+
+  return (
+    <div>
+      <Textarea onChange={handleChange} />
+      <Paragraph text={text} />
+    </div>
+  );
+};
+```
+
+And the `Paragraph` component displays the text coming from props:
+
+```
+const Paragraph = (props) => {
+  return <p>{props.text}</p>;
+};
+```
+
+There should be a single “source of truth” for any data that changes in a React application. Usually, the state is first added to the component that needs it for rendering. Then, if other components also need it, you can lift it up to their closest common ancestor. Instead of trying to sync the state between different components, you should rely on the top-down data flow.
+
+Lifting state involves writing more “boilerplate” code than two-way binding approaches, but as a benefit, it takes less work to find and isolate bugs. Since any state “lives” in some component and that component alone can change it, the surface area for bugs is greatly reduced. Additionally, you can implement any custom logic to reject or transform user input.
 
 Go to the `App.js` file for exercise instructions!
 
 When you are done, don't forget to commit your changes!
-
-You can continue to the next exercise with: `git checkout lifting-state-up`
 
 ## Going to exercises
 

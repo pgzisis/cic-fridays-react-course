@@ -1,21 +1,22 @@
-// To start using state, import the useState hook.
+// In this component, go through the exact same steps as in the Square
+// component!
+import { useState } from 'react';
 
 const Circle = () => {
-  // Here we should call it. We should initialize it to false, and it should
-  // return isRed and setIsRed.
+  const [isRed, setIsRed] = useState(false);
 
   const handleClick = () => {
-    // Here we should update the state to the opposite of it's current value.
+    setIsRed(!isRed);
   };
 
-  // In `className` we want to add next to 'circle' either a 'red', or a 'blue'
-  // css class. In conditional rendering we saw how with template literals and
-  // the ternary expression we can achieve this, for example:
-  // `${condition ? true : false}`.
-  return <div className={`circle`} onClick={handleClick}></div>;
+  return (
+    <div
+      className={`circle ${isRed ? 'red' : 'blue'}`}
+      onClick={handleClick}
+    ></div>
+  );
 };
 
 export { Circle };
 
-// When you finish you should be a able to see a blue circle. When you click it,
-// it should turn to red!. Congratulations you learned State!
+// When you are finished, go to App.js
