@@ -41,3 +41,6 @@ You are ready to checkout another exercise branch!
 1. `components`
 2. `props`
 3. `conditional-rendering`
+4. `handling-events`
+5. `state`
+6. `lifting-state-up`
