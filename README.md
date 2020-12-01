@@ -1,4 +1,4 @@
-# Map over data
+# Loop over data
 
 As we know so far in React we use jsx in order to write our markups. This lets us use javascript methods inside our tags which is a big advantage.
 What does that mean? That we can use all kinds of fancy javascript methods like `map()`.
