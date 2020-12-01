@@ -44,3 +44,4 @@ You are ready to checkout another exercise branch!
 4. `handling-events`
 5. `state`
 6. `lifting-state-up`
+7. `map-over-data`
