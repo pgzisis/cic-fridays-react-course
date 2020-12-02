@@ -1,29 +1,41 @@
-// Now that we have made our components let's say that we want to pass some data to each one and render them
+// Now that we know how to use map to loop over an array and display a tag let's try displaying a list of vegetables.
 
-// In the Intro Component we want to pass a prop named "name" which will contain a string value with our name
-// Go to the Intro Component to get started
+// In the Vegetable Component we want to pass a prop named "vegetable" which will contain a string value with the vegetable name
+// Go to the Vegetable Component to get started
 
-// In the Hello Component we want to pass a prop named "currentDay" which will contain a string value with the current day
-// Go to the Hello Component to get started
+// Now that the <Vegetable /> component is expecting a vegetable, Let's loop through the myVeggies array and try to display the vegetable
+// component by passing it's name. We can replace the <div>.
 
-// Now both of our new components are expecting a prop to be passed to each and after doing so they will be rendered in each view.
+// Let's take this one step further and see how we can update our array. As you can see below we already have an input and a button.
+// For the button there is already a method which is responsible to add whatever the use typed to the input on our new array.
+// As you can see when we want to update the state for an array of elements in react we have to pass the current state of the array and return
+// the new state back. What this line is doing [...myVeggies, veggieInput] is copying the myVeggies array with the spread operator and adding the
+// input value on the end.
 
-// First let's try to pass our name to the Intro Component. In order to do so we just have to go to our jsx component
-// and define the attribute of the prop we want to pass in our case "name" and assign the value to it.
-// After doing so and saving our files we can see that the name is correctly displayed.
+// **Hint To refresh your memory on how state works in react you can look back on the state branch.
 
-// Now We want to pass the current day in the Hello component. We can follow the previous steps but for actually getting the current day
-// We will have to use our javascript knowledge. We can create a new variable which calculates the current time and pass that to the Hello component
-// Or we can pass directly the implementation of the calculation of the current day. *Hint: Use new Date().toDateString()
+// But We're missing the event handler for our input which should update the veggieInput state value. Let's try to do that.
 
-import { Hello } from './Hello';
-import { Intro } from './Intro';
+// **Hint look on event-handlers and branch if stuck.
+
+// Congratulations now we can use how after putting everything together our list is being updated on the fly.
+
+
+import { useState } from 'react';
 
 const App = () => {
+  const [veggieInput, setVeggieInput] =  useState('');
+  const [myVeggies, setMyVeggies] = useState(['potatoes', 'tomatoes']);
+
+  const addRandomVeggie = () => {
+      setMyVeggies((myVeggies) => [...myVeggies, veggieInput]);
+  }
+
   return (
     <div className="container">
-      <Hello />
-      <Intro />
+        <div>I want to display my veggies here</div>
+        <input />
+        <button onClick={addRandomVeggie}>Add to my Veggies</button>
     </div>
   );
 };
