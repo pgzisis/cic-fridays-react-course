@@ -1,11 +1,13 @@
-// Let's learn about components' lifecycle. In this exercise we will render a
-// clock in the UI, showing the current time. Go to Clock.js to start!
+// Let's learn about async operations! In this exercise we will display a 
+// random image on the browser, which URL is fetched from a remote resource.
+
+// Go to Doggo.js to get started.
 
 
-import { Clock } from './Clock';
+import { Doggo } from './Doggo';
 
 const App = () => {
-  return <Clock />;
+  return <Doggo />;
 };
 
 export default App;
