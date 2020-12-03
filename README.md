@@ -157,6 +157,8 @@ If you want to run an effect and clean it up only once (on mount and unmount), y
 Go to the App.js file for exercise instructions!
 
 When you are done, don't forget to commit your changes!
+
+You can continue to the next exercise with: `git checkout async`
 ## Going to exercises
 
 To go to the exercises, you have to switch to the relevant git branch.
