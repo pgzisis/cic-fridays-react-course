@@ -116,6 +116,8 @@ Go to the `App.js` file for exercise instructions!
 
 When you are done, don't forget to commit your changes!
 
+You can continue to the next exercise with: `git checkout loop-over-data`
+
 ## Going to exercises
 
 To go to the exercises, you have to switch to the relevant git branch.
